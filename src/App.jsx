@@ -2,7 +2,7 @@ import Header from './header.jsx'
 import Footer from './footer.jsx'
 import Food   from  './food.jsx'
 import Card   from   './Card.jsx'
-import Volumecontrol from './useState.jsx';
+import Volumecontrol from './VolumeControl.jsx';
 import EchoBox  from './EchoBox.jsx';
 function App() {
 

@@ -1,5 +1,45 @@
+/* Ensure proper box sizing and full height */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #4f4d4b;
+}
+
+/* This targets the root container where React mounts everything */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers everything vertically */
+  align-items: center;     /* Centers everything horizontally */
+  gap: 32px;               /* Keeps an exact 32px gap so they NEVER touch or overlap */
+  padding: 48px 16px;      /* Prevents clipping at the top/bottom */
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
 
+/* Page Level Vertical Centering */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Stack vertically (use 'row' if you want them side-by-side) */
+  justify-content: center; /* Centers items vertically along main axis */
+  align-items: center;     /* Centers items horizontally */
+  gap: 32px;               /* Clean spacing between the components */
+  background-color: #c8e7ee;
+  padding: 40px 16px;
+}
 
 /* Card Container */
 .card {
@@ -46,9 +86,9 @@
   margin: 0 16px 20px 16px;
 }
 
+/* Volume Control */
 .Volume {
   width: 260px;
-  margin: 40px auto;
   padding: 32px 24px;
   background-color: #fdfbf7; /* Warm cream */
   border-radius: 28px;
@@ -58,17 +98,15 @@
   font-family: 'Quicksand', sans-serif;
 }
 
-/* Heading */
 .Volume h1 {
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  text-transform: lowercase; /* Lowercase gives a soft, playful feel */
+  text-transform: lowercase;
   color: #8c8275;
   margin: 0 0 24px 0;
 }
 
-/* Volume Display (if you render the number) */
 .Volume .volume-display {
   font-size: 2.2rem;
   font-weight: 700;
@@ -76,7 +114,6 @@
   margin: 0 0 20px 0;
 }
 
-/* Sky Blue Buttons */
 .Volume button {
   width: 50px;
   height: 50px;
@@ -86,15 +123,14 @@
   font-weight: 700;
   line-height: 1;
   color: #2b5570;
-  background-color: #d6ecfa; /* Pastel sky blue */
+  background-color: #d6ecfa;
   border: none;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(162, 210, 242, 0.45);
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy feel */
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Button Interactions */
 .Volume button:hover {
   background-color: #c4e5fa;
   transform: translateY(-3px) scale(1.05);
@@ -104,4 +140,59 @@
 .Volume button:active {
   transform: translateY(0) scale(0.95);
   box-shadow: 0 2px 6px rgba(162, 210, 242, 0.3);
+}
+
+/* EchoBox Container */
+.EchoBox {
+  width: 320px;
+  padding: 28px 24px;
+  background-color: #fff5f7;
+  border: 2px solid #ffd6e0;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.EchoBox label.echoText {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #c96884;
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
+}
+
+.EchoBox input[type="text"] {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-family: 'Quicksand', sans-serif;
+  color: #7d4455;
+  background-color: #ffffff;
+  border: 2px solid #ffccd7;
+  border-radius: 16px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.EchoBox input[type="text"]::placeholder {
+  color: #f3b4c3;
+}
+
+.EchoBox input[type="text"]:focus {
+  border-color: #ff85a2;
+  box-shadow: 0 0 0 4px rgba(255, 133, 162, 0.2);
+  background-color: #fffdfd;
+}
+
+.EchoBox h2.echoText {
+  min-height: 1.5em;
+  margin: 20px 0 0 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ff5c8a;
+  word-break: break-word;
+  text-align: center;
 }
