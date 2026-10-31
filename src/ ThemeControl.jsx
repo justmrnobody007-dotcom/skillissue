@@ -13,11 +13,11 @@ function ThemeController(){
         onClick={() =>
           setSettings(prev => ({
             ...prev,
-            theme: "dark"
+            theme: prev.theme === "light" ? "dark" : "light"
           }))
         }
       >
-        Change theme
+        toggle theme
       </button>
 
       <button onClick={() => setSettings(prev => ({theme:"light"}))}>reset</button>

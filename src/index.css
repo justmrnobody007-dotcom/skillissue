@@ -1,4 +1,6 @@
-/* Ensure proper box sizing and full height */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+
+/* Global Reset & Box Sizing */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -10,42 +12,22 @@ html, body {
   background-color: #4f4d4b;
 }
 
-/* This targets the root container where React mounts everything */
+/* React Root Centering Container */
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers everything vertically */
-  align-items: center;     /* Centers everything horizontally */
-  gap: 32px;               /* Keeps an exact 32px gap so they NEVER touch or overlap */
-  padding: 48px 16px;      /* Prevents clipping at the top/bottom */
-}
-
-
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
-
-/* Page Level Vertical Centering */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column; /* Stack vertically (use 'row' if you want them side-by-side) */
-  justify-content: center; /* Centers items vertically along main axis */
-  align-items: center;     /* Centers items horizontally */
-  gap: 32px;               /* Clean spacing between the components */
-  background-color: #727575;
-  padding: 40px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 48px 16px;
 }
 
 /* Card Container */
 .card {
   width: 300px;
-  background-color: #1b2e1b; /* Deep moss green */
-  color: #d1e7dd; /* Pale swamp mist green for text */
+  background-color: #1b2e1b;
+  color: #d1e7dd;
   border: 1px solid #2d4a2d;
   border-radius: 14px;
   overflow: hidden;
@@ -55,13 +37,11 @@ body {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Hover Effect */
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
 }
 
-/* Card Image */
 .card img {
   width: 100%;
   height: 200px;
@@ -69,20 +49,18 @@ body {
   display: block;
 }
 
-/* Heading */
 .card h2 {
   font-size: 1.4rem;
   font-weight: 700;
   text-transform: capitalize;
-  color: #74c67a; /* Vivid swamp glow */
+  color: #74c67a;
   margin: 16px 16px 8px 16px;
 }
 
-/* Body Text */
 .card p {
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #9cb89c; /* Muted greenish grey */
+  color: #9cb89c;
   margin: 0 16px 20px 16px;
 }
 
@@ -90,7 +68,7 @@ body {
 .Volume {
   width: 260px;
   padding: 32px 24px;
-  background-color: #fdfbf7; /* Warm cream */
+  background-color: #fdfbf7;
   border-radius: 28px;
   box-shadow: 0 10px 30px rgba(180, 160, 140, 0.15);
   border: 1px solid #f0eae1;
@@ -197,17 +175,13 @@ body {
   text-align: center;
 }
 
-/* Default (Light) Theme */
+/* Theme Controller Base */
 .theme {
   width: 280px;
   padding: 24px;
   border-radius: 24px;
   text-align: center;
   font-family: 'Quicksand', sans-serif;
-  background-color: #ffffff;
-  color: #3f3d56;
-  border: 2px solid #f0e6e8;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
 }
 
@@ -227,36 +201,32 @@ body {
   font-weight: 600;
   border-radius: 14px;
   cursor: pointer;
-  background-color: #f7f3f5;
-  color: #594a4e;
-  border: 1px solid #ebdce0;
   transition: all 0.2s ease;
 }
 
-.theme button:hover {
-  background-color: #fae4eb;
-  color: #c94b72;
-}
-
-/* Dark Theme Triggered Automatically via CSS */
-/* :has checks if any element inside contains the text / state change */
-.theme:has(p:nth-of-type(2):empty),
-.theme:has(p:last-of-type) {
-  /* base structure */
-}
-
-/* When the second paragraph has "dark" inside */
-.theme:has(p:not(:empty)) {
-  /* transitions */
-}
-/* Light styles */
+/* Light Theme */
+.theme,
 .theme.light {
   background-color: #ffffff;
   color: #3f3d56;
   border: 2px solid #f0e6e8;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 }
 
-/* Dark styles */
+.theme button,
+.theme.light button {
+  background-color: #f7f3f5;
+  color: #594a4e;
+  border: 1px solid #ebdce0;
+}
+
+.theme button:hover,
+.theme.light button:hover {
+  background-color: #fae4eb;
+  color: #c94b72;
+}
+
+/* Dark Theme */
 .theme.dark {
   background-color: #1e1e24;
   color: #f3f3f6;
