@@ -7,7 +7,7 @@ function ThemeController(){
     });
 
     return (
-    <div className="theme">
+   <div className={`theme ${settings.theme}`}>
       <p>Volume: {settings.volume}</p>
       <p>Theme: {settings.theme}</p>
 
