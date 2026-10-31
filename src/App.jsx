@@ -5,6 +5,8 @@ import Card   from   './Card.jsx'
 import Volumecontrol from './VolumeControl.jsx';
 import EchoBox  from './EchoBox.jsx';
 import ThemeController from './ ThemeControl.jsx';
+import Tags from './banana.jsx';
+
 function App() {
 
   return(
@@ -17,6 +19,7 @@ function App() {
   <Volumecontrol />
   <EchoBox />
   <ThemeController />
+  <Tags />
   </>
   );
   
