@@ -3,6 +3,7 @@ import Footer from './footer.jsx'
 import Food   from  './food.jsx'
 import Card   from   './Card.jsx'
 import Volumecontrol from './useState.jsx';
+import EchoBox  from './EchoBox.jsx';
 function App() {
 
   return(
@@ -13,7 +14,7 @@ function App() {
   <Footer /> 
   <Card />
   <Volumecontrol />
-
+  <EchoBox />
   </>
   );
   
