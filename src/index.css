@@ -37,7 +37,7 @@ body {
   justify-content: center; /* Centers items vertically along main axis */
   align-items: center;     /* Centers items horizontally */
   gap: 32px;               /* Clean spacing between the components */
-  background-color: #c8e7ee;
+  background-color: #727575;
   padding: 40px 16px;
 }
 

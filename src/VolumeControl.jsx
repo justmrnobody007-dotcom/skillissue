@@ -9,8 +9,8 @@ function  Volumecontrol(){
         <div className = "Volume">
         <h1>volume</h1>
         <p className = "volume-display">{volume}</p>
-        <button onClick={() => setVolume(volume+10)}>+</button>
-        <button onClick={() => setVolume(volume - 10)}>-</button>
+        <button onClick={() => setVolume(prevVolume => prevVolume +10)}>+</button>
+        <button onClick={() => setVolume(prevVolume => prevVolume - 10)}>-</button>
         </div>
         </>
     );
