@@ -8,9 +8,13 @@ function Tags() {
   ]);
 
   function addTag() {
-    setTags(prevTags => ["frontend", ...prevTags]);
-  }
-  
+  const pokemon = ["pikachu", "eevee", "snorlax", "mew", "psyduck", "jigglypuff"];
+
+  const randomPokemon = pokemon[Math.floor(Math.random() * pokemon.length)];
+
+  setTags(prevTags => [...prevTags, randomPokemon]);
+}
+
   function deleteTag(indexToDelete) {
     setTags(prevTags =>
       prevTags.filter((tag, index) => index !== indexToDelete)
@@ -18,16 +22,19 @@ function Tags() {
   }
 
   return (
-   <div>
-      <button onClick={addTag}>Add Frontend</button>
-      {tags.map((tag, index) => (
-  <p key={index}>
-    {tag}
-    <button onClick={() => deleteTag(index)}>
-      Delete
-    </button>
-  </p>
-))}
+   <div className="tags-card">
+      <button className="btn-add" onClick={addTag}>+ Catch Pokémon</button>
+      
+      <div className="tags-container">
+        {tags.map((tag, index) => (
+          <p key={index} className="tag-item">
+            <span className="tag-name">#{tag}</span>
+            <button className="btn-del" onClick={() => deleteTag(index)}>
+              ✕
+            </button>
+          </p>
+        ))}
+      </div>
     </div>
   );
 }
