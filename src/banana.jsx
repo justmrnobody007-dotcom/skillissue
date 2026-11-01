@@ -3,8 +3,8 @@ import { useState } from "react";
 function Tags() {
 
   const [tags, setTags] = useState([
-    "react",
-    "vite"
+    "bleh",
+    "blah"
   ]);
 
   function addTag() {
